@@ -1,0 +1,108 @@
+Commands from terminal:
+python --version
+python -m venv env
+cmd env\Scripts\activate
+env\Scripts\activate
+#now envirnoment is activated
+
+pip install flask
+pip install dotenv
+
+===================
+Django comes with a lot of features 
+gives us a admin site
+has ORM 
+Django framework for building web applications in python
+front end,client
+backend,server
+puts URL in browser 
+browser sends a request to the webserver that hosts our website
+'I want to see the home page'
+webserver takes request processes it and return a response back to the client
+this data exchange is defined by a protocol 
+this browser sends a HTTP request to the server
+how should we respond to clients???
+we use HTML for representing webpages
+generate page on the server or let client create the page
+
+Server provides an API all thhings we use to interact
+API two different software's to communicate and exchange data with each other.
+An API, or Application Programming Interface, is a server that you can use to retrieve and send data to using code. 
+When we want to receive data from an API, we need to make a request. Requests are used all over the web. For instance,
+ when you visited this blog post, your web browser made a request to the Dataquest web server, which responded with the content of this web page.
+
+ Use Django to build our software
+The Django REST Framework (DRF) is a package built on top of Django to create web APIs.
+Django is an API
+
+
+===========
+python manage.py startapp blog
+python manage.py startapp contact
+
+
+=============
+django is a framework
+django has urls we do mapping in urls
+logic we want, is in views
+view connects the template and model
+
+
+
+===========
+http://127.0.0.1:8000/player/ URL is put in search will print - Yasmin player webpage
+http://127.0.0.1:8000 will print selam yasminn
+
+==================================
+add a player from the cmd then shows on the admin portal
+
+python manage.py shell
+from player.models import PlayerModel
+PlayerModel.objects.all()
+<QuerySet [<PlayerModel: Player1>, <PlayerModel: Player2>, <PlayerModel: Yasmin player from shell>]>
+qset=PlayerModel.objects.create(title='player3',content='player3 from shell')
+<QuerySet [<PlayerModel: Player1>, <PlayerModel: Player2>, <PlayerModel: Yasmin player from shell>, <PlayerModel: player3>]>                                                                                                            ayer3>]>
+qset=PlayerModel.objects.create(title='player4',content='player4 from shell')
+PlayerModel.objects.all()
+<QuerySet [<PlayerModel: Player1>, <PlayerModel: Player2>, <PlayerModel: Yasmin player from shell>, <PlayerModel: player3>, <PlayerModel: player4>]>ayer3>, <PlayerModel: player4>]>
+qset.content='deneme for player4'
+qset.save()
+PlayerModel.objects.all()                                                                                       ayer3>, <PlayerModel: player4>]>
+<QuerySet [<PlayerModel: Player1>, <PlayerModel: Player2>, <PlayerModel: Yasmin player from shell>, <PlayerModel: player3>, <PlayerModel: player4>]>
+record=PlayerModel.objects.get(pk=4) 
+record.content
+'player3 from shell'
+exit()
+
+(env) C:\Personal_Files_Programming\YasminWebDJango>python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 03, 2022 - 11:26:02
+Django version 4.0.6, using settings 'yasminweb.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[03/Aug/2022 11:26:04] "GET / HTTP/1.1" 200 14
+[03/Aug/2022 11:26:09] "GET /player/ HTTP/1.1" 200 868
+[03/Aug/2022 11:26:16] "GET /admin/ HTTP/1.1" 200 4902
+[03/Aug/2022 11:26:18] "GET /admin/player/playermodel/ HTTP/1.1" 200 7117
+[03/Aug/2022 11:26:18] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[03/Aug/2022 11:26:20] "GET /admin/player/playermodel/5/change/ HTTP/1.1" 200 8245
+[03/Aug/2022 11:26:20] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[03/Aug/2022 11:26:23] "GET /admin/player/playermodel/ HTTP/1.1" 200 7117
+[03/Aug/2022 11:26:25] "GET /admin/player/playermodel/5/change/ HTTP/1.1" 200 8245
+[03/Aug/2022 11:26:25] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[03/Aug/2022 11:26:26] "GET /admin/player/playermodel/ HTTP/1.1" 200 7117
+[03/Aug/2022 11:26:28] "GET /admin/player/playermodel/4/change/ HTTP/1.1" 200 8245
+[03/Aug/2022 11:26:28] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[03/Aug/2022 11:26:33] "GET /admin/player/playermodel/ HTTP/1.1" 200 7117
+[03/Aug/2022 11:26:34] "GET /admin/player/playermodel/5/change/ HTTP/1.1" 200 8245
+[03/Aug/2022 11:26:34] "GET /adm
+
+============================
+craetion of username password for admin portal
+
+python manage.py help
+python manage.py createsuperuser
+then enter all the password and username 
