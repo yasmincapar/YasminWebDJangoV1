@@ -23,6 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',TemplateView.as_view(template_name='index.html'),name='index'),
     path('player/',include('player.urls')),
+    path('accounts/',include('django.contrib.auth.urls')),
+
     #127.0.0.1.8000/player/
     #will go to player.urls page
 ]
